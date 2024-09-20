@@ -389,14 +389,14 @@ mod Ludo {
                     let has_circled = self.token_circled.read((session_id, i, j));
                     let _exit_positions: Array<u256> = array![50, 11, 24, 37];
                     if token_position == 0 || token_position != current_position {
-                        j += 1;
+                        j += 1; 
                         continue;
                     }
                     if is_winning_token {
                         j += 1;
                         continue;
                     }
-                    if !has_circled && current_position > *_exit_positions.get(i).unwrap().unbox() {
+                    if has_circled && current_position > *_exit_positions.get(i).unwrap().unbox() {
                         j += 1;
                         continue;
                     }
